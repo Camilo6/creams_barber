@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Cancelar cita | The Creams Barber & Grooming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/booking.css" />
+    <link rel="stylesheet" href="/cancel.css" />
+  </head>
+  <body>
+    <header class="booking-header">
+      <a class="brand" href="/sucursal" aria-label="The Creams Barber & Grooming, inicio">
+        <span class="brand-mark brand-logo" aria-hidden="true"><img src="/logo-the-creams.png" alt="" /></span>
+        <span class="brand-copy"><strong>THE CREAMS</strong><small>BARBER & GROOMING</small></span>
+      </a>
+      <a class="back-link" href="/reservar">Volver a reservar <span>↗</span></a>
+    </header>
+    <main class="cancel-main">
+      <section class="cancel-card">
+        <div class="cancel-mark" id="cancel-mark">↺</div>
+        <p class="eyebrow">GESTIONA TU CITA</p>
+        <h1 id="cancel-title">Consultando tu cita...</h1>
+        <p class="cancel-intro" id="cancel-message" aria-live="polite">Un momento, estamos comprobando los datos de tu reserva.</p>
+        <div class="cancel-details" id="cancel-details" hidden>
+          <div><span>Servicio</span><strong id="cancel-service"></strong></div>
+          <div><span>Barbero</span><strong id="cancel-barber"></strong></div>
+          <div><span>Fecha y hora</span><strong id="cancel-datetime"></strong></div>
+        </div>
+        <p class="cancel-error" id="cancel-error" role="alert"></p>
+        <button class="cancel-button" id="cancel-button" type="button" hidden>Cancelar esta cita</button>
+        <a class="back-link cancel-home" href="/sucursal">Volver al inicio <span>→</span></a>
+      </section>
+      <p class="cancel-footnote">La cancelación se guarda localmente y no notifica al equipo. Contacta directamente a la barbería para confirmar cualquier cambio.</p>
+    </main>
+    <footer class="booking-footer">The Creams Barber & Grooming</footer>
+    <script src="/cancel.js"></script>
+  </body>
+</html>

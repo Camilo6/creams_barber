@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Reserva tu cita en The Creams Barber & Grooming, San Cristóbal, Bogotá." />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Reservar cita | The Creams Barber & Grooming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/booking.css" />
+  </head>
+  <body>
+    <header class="booking-header">
+      <a class="brand" href="/sucursal" aria-label="The Creams Barber & Grooming, inicio">
+        <span class="brand-mark brand-logo" aria-hidden="true"><img src="/logo-the-creams.png" alt="" /></span>
+        <span class="brand-copy"><strong>THE CREAMS</strong><small>BARBER & GROOMING</small></span>
+      </a>
+      <a class="back-link" href="/sucursal">Volver al inicio <span>↗</span></a>
+    </header>
+
+    <main class="booking-main">
+      <section class="booking-intro">
+        <p class="eyebrow">THE CREAMS · BARBER & GROOMING</p>
+        <h1>Reserva tu cita<span>.</span></h1>
+        <p>Elige tu servicio, barbero y horario preferido.</p>
+      </section>
+
+      <div class="booking-status" role="note"><strong>Reservas en línea aún no activadas.</strong> Esta solicitud se guarda solo en este computador; The Creams no recibe notificación ni confirma la cita.</div>
+
+      <div class="booking-layout">
+        <form class="booking-card" id="public-booking-form">
+          <div class="form-section">
+            <div class="section-title"><span>01</span><div><h2>Elige tu servicio</h2><p>Selecciona el servicio y quién te atenderá.</p></div></div>
+            <div class="field-grid">
+              <label>Servicio
+                <select id="service-select" name="serviceId" required><option value="">Cargando servicios...</option></select>
+              </label>
+              <label>Barbero
+                <select id="barber-select" name="barberId" required><option value="">Cargando barberos...</option></select>
+              </label>
+            </div>
+            <div class="service-summary" id="service-summary" hidden></div>
+          </div>
+
+          <div class="form-section">
+            <div class="section-title"><span>02</span><div><h2>Elige fecha y hora</h2><p>Consulta los horarios disponibles.</p></div></div>
+            <label class="date-field">Fecha
+              <input id="date-input" name="date" type="date" required />
+            </label>
+            <div class="availability-message" id="availability-message" aria-live="polite">Selecciona servicio, barbero y fecha para ver los horarios.</div>
+            <div class="slots-grid" id="slots-grid" aria-label="Horarios disponibles"></div>
+            <input id="time-input" name="time" type="hidden" required />
+          </div>
+
+          <div class="form-section">
+            <div class="section-title"><span>03</span><div><h2>Tus datos</h2><p>Déjanos tus datos para la solicitud.</p></div></div>
+            <div class="field-grid">
+              <label>Nombre completo
+                <input name="name" autocomplete="off" maxlength="100" placeholder="Tu nombre" required />
+              </label>
+              <label>Celular / WhatsApp
+                <input name="phone" type="tel" autocomplete="off" inputmode="tel" placeholder="Tu número de celular" required />
+              </label>
+            </div>
+            <label class="email-field">Correo electrónico <span>(opcional)</span>
+              <input name="email" type="email" autocomplete="off" maxlength="254" placeholder="nombre@correo.com" />
+            </label>
+            <label class="consent-field">
+              <input name="consent" type="checkbox" required />
+              <span>Acepto que mis datos se guarden en este computador para gestionar la solicitud.</span>
+            </label>
+          </div>
+
+          <p class="form-error" id="booking-error" role="alert"></p>
+          <button type="submit" class="submit-button" id="submit-booking" disabled><span>Guardar solicitud</span><b>→</b></button>
+          <p class="form-footnote">La barbería debe confirmar la cita directamente contigo.</p>
+        </form>
+
+        <aside class="booking-aside">
+          <div class="aside-card">
+            <span class="aside-mark aside-logo"><img src="/logo-the-creams.png" alt="" /></span>
+            <p class="eyebrow">THE CREAMS · SAN CRISTÓBAL</p>
+            <h2>Un buen corte<br />cambia el día.</h2>
+            <div class="aside-divider"></div>
+            <p class="aside-detail"><span>◷</span><span><strong>Horario por confirmar</strong><br />Consulta con el equipo antes de asistir.</span></p>
+            <p class="aside-detail"><span>⌖</span><span><strong>Cl. 33 Sur #7-37</strong><br />San Cristóbal, Bogotá.</span></p>
+          </div>
+          <p class="privacy-note"><span>ⓘ</span>Los datos ingresados se guardan localmente y no se envían por WhatsApp.</p>
+        </aside>
+      </div>
+
+      <section class="confirmation-card" id="booking-confirmation" hidden aria-live="polite">
+        <div class="success-mark">✓</div>
+        <p class="eyebrow">SOLICITUD GUARDADA</p>
+        <h2>¡Listo!</h2>
+        <p id="confirmation-copy"></p>
+        <div class="confirmation-reference">Referencia de solicitud <strong id="confirmation-id"></strong></div>
+        <div class="cancellation-link-box">
+          <p>Si necesitas, puedes cancelar esta solicitud desde el enlace.</p>
+          <a id="cancel-appointment-link" href="/cancelar">Cancelar solicitud</a>
+          <button type="button" id="copy-cancellation-link">Copiar enlace</button>
+          <small>La cancelación se guarda localmente y no avisa a la barbería.</small>
+        </div>
+        <a class="back-link" href="/sucursal">Volver al inicio <span>→</span></a>
+      </section>
+    </main>
+    <footer class="booking-footer">The Creams Barber & Grooming</footer>
+    <script src="/booking.js"></script>
+  </body>
+</html>
